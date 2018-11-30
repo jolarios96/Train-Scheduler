@@ -127,22 +127,7 @@
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 
     <!-- App Code -->
-    <script>
-        var globalClock = setInterval(function () {
-            $('#clock').text(moment().format('MMMM Do, h:mm:ss a'));
-            
-            //next, update table entries via firebase data
-
-        }, 1000);
-
-        $('#submit').on('click', function () {
-            var newEntry = $('<tr>');
-            //append data <td>'s to new <tr>
-
-            // JSON.stringify & send to firebase
-        });
-
-    </script>
+    <script type='text/javascript' src='app.js'></script>
 
 </body>
 
