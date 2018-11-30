@@ -66,18 +66,18 @@
 
                 <div class="form-group">
                     <label for="destination">Destination</label>
-                    <input type="password" class="form-control" id="destination">
+                    <input type="destination" class="form-control" id="destination">
                 </div>
 
 
                 <div class="form-group">
                     <label for="firstTrainTime">First Train Time (HH:mm - military time)</label>
-                    <input type="trainID" class="form-control" id="trainID" aria-describedby="emailHelp">
+                    <input type="firstTrainTime" class="form-control" id="firstTrainTime" aria-describedby="emailHelp">
                 </div>
 
                 <div class="form-group">
                     <label for="Frequency">Frequency (min)</label>
-                    <input type="password" class="form-control" id="destination">
+                    <input type="frequency" class="form-control" id="frequency">
                 </div>
 
                 <button type="submit" class="btn btn-primary">Submit</button>
@@ -122,6 +122,10 @@
             $('#clock').text(moment().format('MMMM Do, h:mm:ss a'));
 
         }, 1000);
+
+        $('#submit').on('click', function () {
+            
+        });
 
     </script>
 
