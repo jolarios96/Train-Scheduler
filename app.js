@@ -1,5 +1,5 @@
 // database ref
-var trainData = firebase.database;
+var trainData = firebase.database();
 
 $('#submit').on('click', function () {
     // get input && store in object
