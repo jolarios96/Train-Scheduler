@@ -31,10 +31,19 @@
             bottom: 0;
             left: 10px;
         }
+
+ 
     
         @media (min-width: 1px){
             .jumbotron{
                 padding: 3rem 2rem;
+            }
+
+        }
+
+        @media (min-width: 490px){
+            .jumbotron{
+                padding: 4rem 2rem;
             }
 
         }
@@ -70,24 +79,23 @@
             <h3 class='card-title'>Add Train</h3>
             <form>
                 <div class="form-group">
-                    <label for="trainInput">Train Name</label>
-                    <input type="trainID" class="form-control" id="trainID" aria-describedby="emailHelp">
+                    <label for="train-id-input">Train Name</label>
+                    <input type="text" class="form-control" id="train-id-input">
                 </div>
 
                 <div class="form-group">
-                    <label for="destination">Destination</label>
-                    <input type="destination" class="form-control" id="destination">
-                </div>
-
-
-                <div class="form-group">
-                    <label for="firstTrainTime">First Train Time (HH:mm - military time)</label>
-                    <input type="firstTrainTime" class="form-control" id="firstTrainTime" aria-describedby="emailHelp">
+                    <label for="destination-input">Destination</label>
+                    <input type="text" class="form-control" id="destination-input">
                 </div>
 
                 <div class="form-group">
-                    <label for="Frequency">Frequency (min)</label>
-                    <input type="frequency" class="form-control" id="frequency">
+                    <label for="first-time-input">First Train Time (HH:mm - military time)</label>
+                    <input type="text" class="form-control" id="first-time-input">
+                </div>
+
+                <div class="form-group">
+                    <label for="frequency-input">Frequency (min)</label>
+                    <input type="text" class="form-control" id="frequency-input">
                 </div>
 
                 <button type="submit" class="btn btn-primary">Submit</button>
