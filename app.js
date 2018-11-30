@@ -1,3 +1,15 @@
+
+// Initialize Firebase
+var config = {
+    apiKey: "AIzaSyDq5Mynul_U8ebMaYmn9w6PiBY_mEWCVZI",
+    authDomain: "train-scheduler-c766b.firebaseapp.com",
+    databaseURL: "https://train-scheduler-c766b.firebaseio.com",
+    projectId: "train-scheduler-c766b",
+    storageBucket: "train-scheduler-c766b.appspot.com",
+    messagingSenderId: "473971828499"
+};
+firebase.initializeApp(config);
+
 // database ref
 var trainData = firebase.database();
 
@@ -32,8 +44,9 @@ trainData.ref().on('child_added', function (snapshot, prevChildKey) {
     var name = snapshot.val().name;
     var destination = snapshot.val().destination;
     var frequency = snapshot.val().frequency;
-    var startTime = snapshot.val().startTime;
+    // var startTime = snapshot.val().startTime;
 
+    console.log(name);
     //  and append data to timetable
     $('#timetable').append(
         $('<tr>').append(
