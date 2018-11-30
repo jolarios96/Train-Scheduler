@@ -14,13 +14,29 @@
         body {
             background-color: gainsboro;
         }
+        #page-banner{
+            position: relative;
+            top: 0;
+        }
+        #title{
+            position: absolute;
+            top: 10px;
+            left: 10px;
+
+        }
+        #clock{
+            position: absolute;
+            bottom: 0;
+            left: 10px;
+        }
     </style>
 </head>
 
 <body>
     <div class='container'>
-        <div class='jumbotron'>
-            <h1>Train Scheduler</h1>
+        <div id='page-banner' class='jumbotron'>
+            <h1 id='title'>Train Scheduler</h1>
+            <h4 id='clock'></h4>
         </div>
 
         <div class='card mt-5 pt-2 table-striped'>
@@ -99,9 +115,13 @@
 
     <!-- Moment.js ref -->
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
-    
+
     <!-- App Code -->
     <script>
+        var globalClock = setInterval(function () {
+            $('#clock').text(moment().format('MMMM Do, h:mm:ss a'));
+
+        }, 1000);
 
     </script>
 
