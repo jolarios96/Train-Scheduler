@@ -1,3 +1,9 @@
+// NOTE:
+// find a way to calc. the following: (lines ~55-60)
+// var nextArrival;
+// var minutesAway;
+// then append.
+
 
 // Initialize Firebase
 var config = {
@@ -60,7 +66,9 @@ trainData.ref().on('child_added', function (snapshot, prevChildKey) {
         $('<tr>').append(
             $('<td>').text(name),
             $('<td>').text(destination),
-            $('<td>').text(frequency)
+            $('<td>').text(frequency),
+            $('<td>').text(nextArrival),
+            $('<td>').text(minutesAway)
         )
     );
 });
