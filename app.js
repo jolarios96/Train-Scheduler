@@ -21,7 +21,6 @@ $('#train-submit-btn').on('click', function(event) {
     var destination = $('#destination-input').val().trim();
     var startTime = $('#start-time-input').val().trim();
     var frequency = $('#frequency-input').val().trim();
-    console.log(trainName, destination, startTime, frequency);
     
     // store inputs in object
     var newTrain = {
@@ -47,9 +46,11 @@ trainData.ref().on('child_added', function (snapshot, prevChildKey) {
     var name = snapshot.val().name;
     var destination = snapshot.val().destination;
     var frequency = snapshot.val().frequency;
-    // var startTime = snapshot.val().startTime;
+    var startTime = snapshot.val().startTime;
 
-    console.log(name);
+    // caclulate nextArrival in some way . . .
+    var nextArrival;
+
     //  and append data to timetable
     $('#timetable').append(
         $('<tr>').append(
