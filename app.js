@@ -16,7 +16,7 @@ $('#submit').on('click', function () {
     // get input && store in object
     var trainName = $('#train-name-input').val().trim();
     var destination = $('#destination-input').val().trim();
-    var firstTrain = $('#first-train-input').val().trim();
+    var startTime = $('#start-time-input').val().trim();
     var frequency = $('#frequency-input').val().trim();
 
     // store inputs in object
@@ -38,12 +38,25 @@ $('#submit').on('click', function () {
 });
 
 // when data is added to the database:
-trainData.ref().on('child_added', function(snapshot, prevChildKey){
+trainData.ref().on('child_added', function (snapshot, prevChildKey) {
+    // store the data @ firebase
+    var name = snapshot.val().name;
+    var destination = snapshot.val().destination;
+    var frequency = snapshot.val().frequency;
+    var startTime = snapshot.val().startTime;
 
+    //  and append data to timetable
+    $('#timetable').append(
+        $('<tr>').append(
+            $('<td>').text(name),
+            $('<td>').text(destination),
+            $('<td>').text(frequency)
+        )
+    );
 });
 
-var updateInterval = setInterval(function () {
-    // update table entries every 5 min
+// var updateInterval = setInterval(function () {
+//     // update table entries every 5 min
 
-}, 300000); // 1000ms * 60 * 5
+// }, 300000); // 1000ms * 60 * 5
 
