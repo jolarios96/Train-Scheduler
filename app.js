@@ -51,6 +51,10 @@ trainData.ref().on('child_added', function (snapshot, prevChildKey) {
     // caclulate nextArrival in some way . . .
     var nextArrival;
 
+    //  calculate minutes away:
+    //  = nextArrival - (time from moment().format(some useable format))
+    var minutesAway;
+
     //  and append data to timetable
     $('#timetable').append(
         $('<tr>').append(
