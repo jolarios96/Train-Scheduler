@@ -13,13 +13,16 @@ firebase.initializeApp(config);
 // database ref
 var trainData = firebase.database();
 
-$('#submit').on('click', function () {
+$('#train-submit-btn').on('click', function(event) {
+    event.preventDefault();
+
     // get input && store in object
-    var trainName = $('#train-name-input').val().trim();
+    var trainName = $('#train-id-input').val().trim();
     var destination = $('#destination-input').val().trim();
     var startTime = $('#start-time-input').val().trim();
     var frequency = $('#frequency-input').val().trim();
-
+    console.log(trainName, destination, startTime, frequency);
+    
     // store inputs in object
     var newTrain = {
         name: trainName,
@@ -40,6 +43,7 @@ $('#submit').on('click', function () {
 
 // when data is added to the database:
 trainData.ref().on('child_added', function (snapshot, prevChildKey) {
+    console.log('new entry!');
     // store the data @ firebase
     var name = snapshot.val().name;
     var destination = snapshot.val().destination;
