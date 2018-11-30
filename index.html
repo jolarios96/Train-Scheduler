@@ -134,6 +134,19 @@
     <!-- Moment.js ref -->
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 
+
+    <!-- Clock -->
+    <script type='text/javascript'>
+        // initial clock render before interval kicks in
+        $('#clock').text(moment().format('MMMM Do, h:mm:ss a'));
+
+        var globalClock = setInterval(function () {
+            $('#clock').text(moment().format('MMMM Do, h:mm:ss a'));
+
+
+        }, 1000);
+    </script>
+    
     <!-- App Code -->
     <script type='text/javascript' src='app.js'></script>
 

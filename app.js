@@ -1,18 +1,7 @@
-// initial clock render before interval kicks in
-$('#clock').text(moment().format('MMMM Do, h:mm:ss a'));
-
-var globalClock = setInterval(function () {
-    $('#clock').text(moment().format('MMMM Do, h:mm:ss a'));
-
-
-}, 1000);
-
-// code that accesses database below this point
+// database ref
+var trainData = firebase.database;
 
 $('#submit').on('click', function () {
-    // database ref
-    var trainData = firebase.database;
-
     // get input && store in object
     var trainName = $('#train-name-input').val().trim();
     var destination = $('#destination-input').val().trim();
