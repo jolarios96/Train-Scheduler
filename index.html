@@ -12,6 +12,8 @@
 
     <style>
         body {
+            min-width: 490px;
+
             background-color: gainsboro;
         }
         #page-banner{
@@ -29,6 +31,14 @@
             bottom: 0;
             left: 10px;
         }
+    
+        @media (min-width: 1px){
+            .jumbotron{
+                padding: 3rem 2rem;
+            }
+
+        }
+     
     </style>
 </head>
 
@@ -41,12 +51,12 @@
 
         <div class='card mt-5 pt-2 table-striped'>
             <h3 class='card-title'>Current Train Schedule</h3>
-            <table class="table">
+            <table id='timetable' class="table">
                 <thead>
                     <tr>
                         <th scope="col">Train Name</th>
                         <th scope="col">Destination</th>
-                        <th scope="col">Fequency</th>
+                        <th scope="col">Frequency</th>
                         <th scope="col">Next Arrival</th>
                         <th scope="col">Minutes Away</th>
                     </tr>
@@ -120,11 +130,16 @@
     <script>
         var globalClock = setInterval(function () {
             $('#clock').text(moment().format('MMMM Do, h:mm:ss a'));
+            
+            //next, update table entries via firebase data
 
         }, 1000);
 
         $('#submit').on('click', function () {
-            
+            var newEntry = $('<tr>');
+            //append data <td>'s to new <tr>
+
+            // JSON.stringify & send to firebase
         });
 
     </script>
