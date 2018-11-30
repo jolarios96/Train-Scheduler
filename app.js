@@ -43,7 +43,6 @@ $('#train-submit-btn').on('click', function(event) {
 
 // when data is added to the database:
 trainData.ref().on('child_added', function (snapshot, prevChildKey) {
-    console.log('new entry!');
     // store the data @ firebase
     var name = snapshot.val().name;
     var destination = snapshot.val().destination;
@@ -60,9 +59,3 @@ trainData.ref().on('child_added', function (snapshot, prevChildKey) {
         )
     );
 });
-
-// var updateInterval = setInterval(function () {
-//     // update table entries every 5 min
-
-// }, 300000); // 1000ms * 60 * 5
-
